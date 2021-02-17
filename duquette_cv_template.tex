@@ -1,0 +1,424 @@
+% Nic Duquette
+% CV in LaTeX Template
+% http://www.nicolasduquette.com/
+% 
+% This template was last modified February 2021
+%
+% 
+% TexShop stores templates in ~/Libraries/TexShop/Templates/
+
+
+\documentclass[12pt]{article}
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						% COMMONLY USED PACKAGES %
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[hidelinks]{hyperref}
+									% Hyperlinks around the document, add URLS
+
+	% Or use basic settings
+\usepackage[letterpaper]{geometry}
+
+\usepackage{booktabs}
+
+\usepackage{fontawesome5}		% useful icons
+
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%%%%%% FONT OPTIONS %%%%%%
+						%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% Font options 1: Linux Libertine with semibold headings
+%\usepackage[oldstyle]{libertine}			% Linux Libertine / CM Math
+%\newcommand{\libertineSB}{}
+
+
+	% Font option 2: Tufte Book with italic headings (by redefining the SB command)
+\usepackage[oldstyle]{ETbb}					% Edward tufte Book
+\newcommand{\libertineSB}[1]{\textit{#1}}
+
+\usepackage{parskip}						% enable paragraph spacing commands
+
+\usepackage{hanging}						% enable fancy hanging paragraphs
+
+
+
+\usepackage{calc}% http://ctan.org/pkg/calc
+\newlength{\midlength}
+\newlength{\firstlength}
+\newlength{\listindent}
+\newlength{\dategap}
+\newlength{\wrapgap}
+
+\setlength{\wrapgap}{0em}
+\setlength{\dategap}{0.3em}
+\setlength{\listindent}{0.4em}
+\setlength{\firstlength}{1em}%
+\setlength{\midlength}{\textwidth-\firstlength-\listindent}%
+
+
+
+\newcommand{\heading}[1]{
+	{\setlength{\parskip}{0.8cm plus6mm minus3mm}
+	\parindent=0pt
+	\large \libertineSB{{#1}}}
+%\large \textbf{{#1}}}
+	\vspace{0.1em}
+}
+
+\setlength{\parindent}{0cm}
+
+\newcommand{\subheading}[1]{
+	{\setlength{\parskip}{0.5cm plus4mm minus3mm}
+	\parindent=0pt
+	\large \libertineSB{#1}}
+}
+
+\setlength{\parindent}{0cm}
+
+
+\newenvironment{paperlist}{
+	\begin{hangparas}{1em}{1}
+	\raggedright \setlength{\parindent}{.3em} \setlength{\parskip}{6pt}
+}{
+	\end{hangparas}
+}
+
+\newenvironment{datetabbing}{
+	\begin{tabbing}
+	\parskip=1em
+	\hspace*{\listindent}\=\hspace*{\firstlength}\=\hspace*{\midlength}\= \kill
+}{
+	\end{tabbing}
+}
+
+\newenvironment{papercomment}{
+	\begin{minipage}[r]{\textwidth}
+		\raggedright
+		\setlength{\parindent}{2em}
+		\parskip=0em
+		\hangindent=3em    
+		\itshape
+			\textbullet \hspace{0.2em} 
+}{
+	\end{minipage}
+	\vspace{-.3em}
+}
+
+
+\usepackage{ragged2e}
+
+\usepackage{changepage}
+
+
+\newcommand{\status}[1]{#1} %\newline \textit{Status: }\newline
+
+\newcommand{\papersummary}[1]{}
+
+
+\newcommand{\X}{$\times$}		% Times I've done something
+
+%
+%	% CREATE ALTERNATIVE TABLE COLUMN STYLES
+%	% Requires {array} package 
+\usepackage{array}
+	% http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+	%		Left-justified ragged-right
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+	%		Centered fixed-width
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+	%		Right-justified ragged-left
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+	%		Hanging-indent
+\newcolumntype{H}[1]{>{\hangindent1em\hangafter1\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+
+							%%%%%%%%%%%%%%%%%%
+							%%%%%%%%%%%%%%%%%%
+							% START DOCUMENT %
+							%%%%%%%%%%%%%%%%%%
+							%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\setlength{\parindent}{0cm}
+
+				% ------------------------------------------------------ %
+				% ----------------  CONTACT INFORMATION ---------------- %
+				% ------------------------------------------------------ %
+
+\noindent
+{\Large \libertineSB{Nicolas J. Duquette}}
+\begin{datetabbing}
+	USC Price School of Public Policy		\>\>\>	\faPhone: 213-821-2236						\'	\\
+	University of Southern California		\>\>\>	\faIcon{envelope}: nduquett@usc.edu			\'	\\
+	Ralph and Goldy Lewis Hall 234			\>\>\>	\faGlobe: www.nicolasduquette.com			\'	\\
+	Los Angeles, California 90089-0626  		\>\>\>	\faTwitter: @NicDuquette					\'	%
+\end{datetabbing}
+
+
+				% ----------------------------------------------------- %
+				% ----------------  WORK/STUDY HISTORY ---------------- %
+				% ----------------------------------------------------- %
+				
+\heading{Academic Positions Held}
+
+\begin{datetabbing}
+\>	University of Southern California, Sol Price School of Public Policy			\\
+\>	\>	Associate Professor	(with tenure)				\>	2020--present	\'	\\	%
+\>	\>	Assistant Professor								\>	2014--2020		\'	%
+\end{datetabbing}
+
+\heading{Education}
+
+\begin{datetabbing}
+\>	Ph.D. in Economics, University of Michigan			\>\>	2014	\' 		\\
+\>	M.A. in Economics, University of Michigan			\>\>	2010	\' 		\\
+\>	B.A. in Economics,	Dartmouth College				\>\>	2004	\' %, 
+\end{datetabbing}
+
+
+				% ----------------------------------------------------- %
+				% -------------------  BIBLIOGRAPHY ------------------- %
+				% ----------------------------------------------------- %
+
+\heading{Peer-Reviewed Publications}
+
+\begin{paperlist}
+
+``The Evolving Distribution of Giving in the United States,'' Forthcoming, \textit{Nonprofit} \textit{and Voluntary Sector Quarterly}.
+
+``Founders' Fortunes and Philanthropy: A History of the US Charitable Contribution Income Tax Deduction.''   \textit{Business History Review} 93(3), pp.\ 553--584, Autumn 2019.
+
+``Do Share-of-Income Limits on Tax-Deductibility of Charitable Contributions Matter For Charitable Giving?'' \textit{Economics Letters} 174, pp.\ 1--4, January 2019.
+
+``Inequality and Philanthropy: High-Income Giving in the United States 1917-2012.''  \textit{Explorations in Economic History} 70, pp.\ 25--41, October 2018.
+
+``Corporate Charitable Foundations, Executive Entrenchment, and Shareholder Distributions,'' with Eric Ohrn.  \textit{Journal of Economic Behavior \& Organization} 152, pp.\ 235--253, August 2018.
+
+``Spend or Save? Nonprofits' Use of Donations and Other Revenues.'' \textit{Nonprofit and Voluntary Sector Quarterly}  46(6), pp.\ 1142--1165, December 2017.
+
+``Do Tax Incentives Affect Charitable Contributions? Evidence from Public Charities' Reported Revenues.'' \textit{Journal of Public Economics} 137, pp.\ 51--69, May 2016.
+
+``How Johnson Fought the War on Poverty: The Politics and Economics of Funding at the Office of Economic Opportunity,'' with Martha J. Bailey. \textit{Journal of Economic History} 74(2) pp.\ 351--88, June 2014.  NBER Working Paper \#19860.
+
+	\begin{papercomment}
+		Awarded the Arthur H. Cole Prize 
+			for the best paper published in 
+			the \textnormal{Journal of Economic History} from July 2013 to July 2014.
+	\end{papercomment}
+
+
+``Ship Crowding and Slave Mortality: Missing Observations or Incorrect Measurement?'' (with Peter M. Solar). \textit{Journal of Economic History} 77(4) pp.\ 1177--1202, December 2017.
+
+``Revealing the Relationship between Ship Crowding and Slave Mortality: The Role of Missing Data,'' \textit{Journal of Economic History} 74(2) pp.\ 536--53, June 2014. 
+
+\end{paperlist}
+
+
+\heading{Working Papers}
+
+\begin{paperlist}
+
+
+
+``State Income Tax Credits for Charitable Giving: Extent and Efficacy,'' with Brian Galle, Alexandra Graddy-Reed and Mark Phillips. 
+
+``Inequality and Giving,'' with Enda Hargaden. 
+
+``The War on Poverty 55 Years Later: A Review of Long-Run Effects,'' with Martha Bailey, Jamein Cunningham, and Andrew Goodman-Bacon.
+
+
+\end{paperlist}
+
+
+
+				% ---------------------------------------------------- %
+				% -----------------  BRAGGING RIGHTS ----------------- %
+				% ---------------------------------------------------- %
+%\clearpage
+\heading{Awards, Fellowships and Grants}
+
+\begin{datetabbing}
+\>	USC Price Junior Faculty Research Prize								\> \>		2019		\'	\\[\dategap]
+\>  Council of Michigan Foundations: Charitable Tax Credits				\> \>		2018--19	\'	\\[\wrapgap]
+\>\>		Research Grant (\$27,000)									\>							\\[\dategap]
+\>  John Randolph Haynes and Dora Haynes Foundation						\>\>		2018		\' 	\\[\wrapgap]
+\>\>		Faculty Fellowship (\$12,000)								\>							\\[\dategap]
+\>	Sol Price Center for Social Innovation Research Grant (\$25,000	)	\>\>		2016--17	\' 	\\[\dategap]
+\>	Center on Philanthropy and Public Policy Research Grant (\$23,988)	\>\>		2015--16	\' 	\\[\dategap]
+\>	Arthur H. Cole Prize													\>\>		2014		\' 	\\[\dategap]
+\>	MITRE Graduate Research Grant, University of Michigan (\$2,000)		\>\>		2013		\' 	\\[\dategap]
+\>	Indiana University--Purdue University Indianapolis, 					\>\>		2012		\' 	\\[\wrapgap]
+\>\>		Philanthropy Archives Travel and Research Grant	(\$1,050)	\>							\\[\dategap]
+\>	Rackham Conference Travel Grant, University of Michigan				\>\>		2012		\' 	\\[\dategap]
+\>	Rackham Centennial Fellowship, University of Michigan				\>\>		2012		\' 	\\[\dategap]
+\>	Nonprofit Dissertation Research Fellowship, 							\>\>		2011--12	\' 	\\[\wrapgap]
+\>\>		National Bureau of Economic Research (\$25,000)				\>					 		\\[\dategap]
+\>	Exploratory Travel and Data Grant, 									\>\>		2011		\' 	\\[\wrapgap]
+\>\>		Economic History Association (\$2,500)						\>							\\[\dategap]
+\>	Regents Fellowship, Rackham Graduate School, 						\>\>		2008--09	\' 	\\[\wrapgap]
+\>\>		University of Michigan 										\>							%
+\end{datetabbing}																					
+
+
+				% ---------------------------------------------------- %
+				% --------------------- TEACHING --------------------- %
+				% ---------------------------------------------------- %
+
+
+\heading{Teaching}
+
+\begin{datetabbing}
+\>	University of Southern California													\\[\wrapgap]
+	% PPD 675:
+		% 2014 fall
+		% 2015 spring, fall
+		% 2016 fall
+		% 2017 spring
+		% 2018 spring
+		% 2018 fall
+		% 2019 fall
+		% 2021 spring ?
+	% PPD 478:
+		% 2015 spring
+		% 2016 spring
+		% 2018 spring
+		% 2018 fall
+		% 2019 spring
+		% 2021 spring ?
+	% PPD 716:
+		% 2019 fall
+		% 2020 fall
+\>	\>	PPD 716: Econometrics for Policy, Planning and Management I %(doctoral)
+																\>		2019--21	\'	\\[\wrapgap]
+\>	\>	PPD 675: Nonprofit Management and Leadership				\>		2014--21	\'	\\[\wrapgap]
+\>	\>	PPD 558: Multivariate Statistical Analysis				\>		2021		\'	\\[\wrapgap]
+\>	\>	PPD 478: Social Innovation %(undergraduate)
+																\>		2015--21	\'	\\[\dategap]
+
+\>	University of Michigan (Graduate Student Instructor)								\\
+\>	\>	ECON 604: First-year Doctoral Microeconomic Theory		\>		2013		\'	\\[\wrapgap]
+\>	\>	ECON 501: Applied Masters Microeconomic Theory			\>		2012		\'	%
+\end{datetabbing}
+
+
+
+				% -------------------------------------------------- %
+				% ---------------- TRAVELING CIRCUS ---------------- %
+				% -------------------------------------------------- %
+\clearpage
+\heading{Presentations}
+
+
+\begin{tabular}[t]{H{0.75\textwidth} R{0.187\textwidth}}
+
+Lilly School of Philanthropy-IUPUI,
+ARNOVA,
+Geneva Centre for Philanthropy / University of Geneva										
+																& 2020 \\ \addlinespace[\dategap]
+
+ARNOVA-Independent Sector Policy Symposium,
+United Philanthropy Forum PolicyWorks Institute,
+University of Memphis, 
+University of California--Riverside,
+University of Utah Eccles Institute, ARNOVA Annual Conference, 
+West Coast Tax Exempt Organizations Conference
+																& 2019 \\ \addlinespace[\dategap]
+
+Loyola Marymount University,
+ARNOVA Annual Conference (\X4), 
+Western Economic Association (\X2),
+University of Michigan War on Poverty Conference 
+																& 2018 \\ \addlinespace[\dategap]
+McMaster University, 
+University of Victoria, 
+Wilfrid Laurier University,	
+All-UC/Caltech Conference on Spatial Inequality,
+National Tax Association Annual Conference (\X2), 
+Western Economic Association Conference
+																& 2017 \\ \addlinespace[\dategap]
+American Economic Association Annual Conference,
+	Michigan Tax Invitational (M-TAXI) Conference,
+	National Tax Association Annual Conference 
+																& 2016 \\ \addlinespace[\dategap]
+																						
+National Tax Association Annual Conference (\X2)					& 2015 \\ \addlinespace[\dategap]																					
+
+University of Illinois at Chicago,
+USC Price School of Public Policy, 
+Wellesley College, 
+ARNOVA Annual Conference 						
+																& 2014 \\ \addlinespace[\dategap]	
+																					
+U.S. Department of Treasury, Office of Tax Analysis, 
+University of Arizona,
+Vanderbilt University 												
+																& 2013 \\ \addlinespace[\dategap]																												
+Cliometric Society Annual Meeting								& 2012 \\ \addlinespace[\dategap]									
+Economic History Association (poster session)					& 2011
+\end{tabular}
+
+%* -- Scheduled
+
+
+				% ------------------------------------------------------ %
+				% ----------------------  SERVICE ---------------------- %
+				% ------------------------------------------------------ %
+\clearpage
+\heading{Professional Service}
+
+\begin{datetabbing}	
+\>  Editorial Positions																\\[\wrapgap]
+\>	\>	Area Editor, \textit{Nonprofit and Voluntary Sector Quarterly}
+															\> 2020--present	\'	\\[\dategap]
+\>  Service To The Profession														\\[\wrapgap]
+\>	\>	Ad-Hoc Grant Reviewer, National Science Foundation SES		\> 2019		\'	\\[\wrapgap]
+\>	\>	Program Committee, National Tax Association Conference 		\> 2016		\'	\\[\dategap]
+\>	Referee																			\\[\wrapgap]
+\>	\>	\textit{American Economic Journal}											\\[\wrapgap]
+\>	\>	\textit{Quarterly Journal of Political Economy}								\\[\wrapgap]
+\>	\>	\textit{Nonprofit and Voluntary Sector Quarterly}							\\[\dategap]
+\>	Advising																		\\[\wrapgap]
+\>	\>	Undergraduate Thesis Advisor 						\>		2018--19	\'	\\[\wrapgap]
+\>	\>	Undergraduate Directed Research Advisor				\>		2019		\'	\\[\wrapgap]
+\>	\>	Independent Study, Master's Level ($\times$2)		\>		2015, 2019	\'	\\[\wrapgap]
+\>	\>	Doctoral Committees	 ($\times$4)						\>		2019--present	\'	\\[\dategap]
+\>	School and Departmental Service													\\[\wrapgap]
+\>	\>	MNLM Task Force										\>		2019--20	\'	\\[\wrapgap]
+\>	\>	Philanthropy Symposium Committee						\>		2018--19	\'	\\[\wrapgap]
+\>	\>	Research Committee									\>		2018--21	\'	\\[\wrapgap]
+\>	\>	Society of Fellows Committee							\>		2018--19	\'	\\[\wrapgap]
+\>	\>	Center on Philanthropy and							\>		2016--20	\'	\\[\wrapgap]
+\>	\>  \hspace{1em}Public Policy Seminar co-chair			\>					\'	\\[\wrapgap]
+\>	\>	Hiring Committee										\>		2018--19	\'	\\[\wrapgap]
+\>	\>	Third-year review committee (chair)					\>		2020-21		\'	\\[\wrapgap]
+\>	\>	Grade Appeal Committee								\>		2017--18	\'	\\[\wrapgap]
+\>	\>	PhD Committee										\>		2016--19	\'	\\[\wrapgap]
+\>	\>	Nonprofit and Philanthropy Committee					\>		2014--20	\'	\\[\wrapgap]
+\>	\>	Undergraduate Degree Committee						\>		2014--16	\'	\\[\wrapgap]
+\>	\>	Information Technology Policy Task Force (chair)		\>		2015--16	\'	\\[\wrapgap]
+\>	\>	Undergraduate Degree Task Force						\>		2015--16	\'	\\[\dategap]
+\>	Professional Association Memberships												\\[\wrapgap]
+\>	\>	Association for Research on Nonprofit Organizations						\>	\\[\wrapgap]
+\>	\>	~~and Voluntary Action (ARNOVA)											\>	\\[\wrapgap]
+\>	\>	National Tax Association													\>	\\[\wrapgap]
+\>	\>	Economic History Association												\>	\\[\wrapgap]
+\>	\>	Cliometric Society														\>	\\[\wrapgap]
+\>	\>	Association for Public Policy Analysis and Management (APPAM)			\>	\\[\wrapgap]
+\>	\>	Western Economic Association												\>	\\[\wrapgap]
+\>	\>	American Economic Association											%
+\end{datetabbing}
+
+	
+				% ------------------------------------------------------ %
+				% --------------------  LAST UPDATED ------------------- %
+				% ------------------------------------------------------ %
+\vfill{}
+\begin{scriptsize}
+\textit{Last updated: \today{} }
+\end{scriptsize}
+
+\end{document}  
