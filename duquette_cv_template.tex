@@ -15,35 +15,26 @@
 						% COMMONLY USED PACKAGES %
 						%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[hidelinks]{hyperref}
-									% Hyperlinks around the document, add URLS
+\usepackage[hidelinks]{hyperref} 	% Hyperlinks around the document, add URLS
 
-	% Or use basic settings
-\usepackage[letterpaper]{geometry}
+\usepackage[letterpaper]{geometry}	% Letter size paper, in case somebody prints the CV
 
-\usepackage{booktabs}
+\usepackage{booktabs}				% Enable the tabbing environments
 
-\usepackage{fontawesome5}		% useful icons
+\usepackage{fontawesome5}			% pretty icons for contact information
 
-						%%%%%%%%%%%%%%%%%%%%%%%%%%
-						%%%%%% FONT OPTIONS %%%%%%
-						%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	% Font options 1: Linux Libertine with semibold headings
-%\usepackage[oldstyle]{libertine}			% Linux Libertine / CM Math
-%\newcommand{\libertineSB}{}
-
-
-	% Font option 2: Tufte Book with italic headings (by redefining the SB command)
+						%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+						%%%%%% FONTS AND FORMATTING %%%%%%
+						%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+						
+	% Tufte Book with italic headings (by redefining the SB command)
 \usepackage[oldstyle]{ETbb}					% Edward tufte Book
-\newcommand{\libertineSB}[1]{\textit{#1}}
 
 \usepackage{parskip}						% enable paragraph spacing commands
 
 \usepackage{hanging}						% enable fancy hanging paragraphs
 
-
-
+	% Use the calc package to define more tweakable spacing options.
 \usepackage{calc}% http://ctan.org/pkg/calc
 \newlength{\midlength}
 \newlength{\firstlength}
@@ -57,27 +48,25 @@
 \setlength{\firstlength}{1em}%
 \setlength{\midlength}{\textwidth-\firstlength-\listindent}%
 
-
-
+	% Define environment for primary section headings
 \newcommand{\heading}[1]{
 	{\setlength{\parskip}{0.8cm plus6mm minus3mm}
 	\parindent=0pt
-	\large \libertineSB{{#1}}}
+	\large \textit{{#1}}}
 %\large \textbf{{#1}}}
 	\vspace{0.1em}
 }
-
 \setlength{\parindent}{0cm}
 
+	% Define environment for section subheadings
 \newcommand{\subheading}[1]{
 	{\setlength{\parskip}{0.5cm plus4mm minus3mm}
 	\parindent=0pt
-	\large \libertineSB{#1}}
+	\large \textit{#1}}
 }
-
 \setlength{\parindent}{0cm}
 
-
+	% Define environment for lists of papers / publications / writings
 \newenvironment{paperlist}{
 	\begin{hangparas}{1em}{1}
 	\raggedright \setlength{\parindent}{.3em} \setlength{\parskip}{6pt}
@@ -85,6 +74,8 @@
 	\end{hangparas}
 }
 
+	% Define environment for lists of things with dates 
+	% aligned to the right margin
 \newenvironment{datetabbing}{
 	\begin{tabbing}
 	\parskip=1em
@@ -93,35 +84,14 @@
 	\end{tabbing}
 }
 
-\newenvironment{papercomment}{
-	\begin{minipage}[r]{\textwidth}
-		\raggedright
-		\setlength{\parindent}{2em}
-		\parskip=0em
-		\hangindent=3em    
-		\itshape
-			\textbullet \hspace{0.2em} 
-}{
-	\end{minipage}
-	\vspace{-.3em}
-}
 
-
-\usepackage{ragged2e}
-
-\usepackage{changepage}
-
-
-\newcommand{\status}[1]{#1} %\newline \textit{Status: }\newline
-
-\newcommand{\papersummary}[1]{}
-
-
+	% Define a nice-looking multiplication operator
+	% to indicate doing things multiple times.
 \newcommand{\X}{$\times$}		% Times I've done something
 
-%
-%	% CREATE ALTERNATIVE TABLE COLUMN STYLES
-%	% Requires {array} package 
+
+	% DEFINE ALTERNATIVE TABLE COLUMN STYLES
+	% Requires {array} package 
 \usepackage{array}
 	% http://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
 	%		Left-justified ragged-right
@@ -143,15 +113,17 @@
 
 \begin{document}
 
-
-\setlength{\parindent}{0cm}
-
 				% ------------------------------------------------------ %
 				% ----------------  CONTACT INFORMATION ---------------- %
 				% ------------------------------------------------------ %
 
+	% Note:
+	% As is done throughout the document, I use the "datetabbing" environment I defined
+	% above to align text. Take a look at this explanation:
+	% https://kb.mit.edu/confluence/display/istcontrib/How+to+use+Tabs+in+LaTeX
+	% Essentially, \> is a tab character, and \' is a predefined right-aligned tab stop.
 \noindent
-{\Large \libertineSB{Nicolas J. Duquette}}
+{\Large \textit{Nicolas J. Duquette}}
 \begin{datetabbing}
 	USC Price School of Public Policy		\>\>\>	\faPhone: 213-821-2236						\'	\\
 	University of Southern California		\>\>\>	\faIcon{envelope}: nduquett@usc.edu			\'	\\
@@ -204,13 +176,6 @@
 ``Do Tax Incentives Affect Charitable Contributions? Evidence from Public Charities' Reported Revenues.'' \textit{Journal of Public Economics} 137, pp.\ 51--69, May 2016.
 
 ``How Johnson Fought the War on Poverty: The Politics and Economics of Funding at the Office of Economic Opportunity,'' with Martha J. Bailey. \textit{Journal of Economic History} 74(2) pp.\ 351--88, June 2014.  NBER Working Paper \#19860.
-
-	\begin{papercomment}
-		Awarded the Arthur H. Cole Prize 
-			for the best paper published in 
-			the \textnormal{Journal of Economic History} from July 2013 to July 2014.
-	\end{papercomment}
-
 
 ``Ship Crowding and Slave Mortality: Missing Observations or Incorrect Measurement?'' (with Peter M. Solar). \textit{Journal of Economic History} 77(4) pp.\ 1177--1202, December 2017.
 
@@ -272,6 +237,12 @@
 
 \heading{Teaching}
 
+	% Note:
+	% One of the nice things about using LaTeX to make a CV is that I can add all
+	% sorts of verbose notes to myself in comments that won't be compiled to
+	% the PDF output. (You can do this with comment bubbles in Word too, but
+	% getting a PDF out without them needs to be done correctly every time.)
+	% Here, I keep track of the terms I've taught all my courses in comments.
 \begin{datetabbing}
 \>	University of Southern California													\\[\wrapgap]
 	% PPD 675:
@@ -371,6 +342,11 @@ Economic History Association (poster session)					& 2011
 \clearpage
 \heading{Professional Service}
 
+	% Note:
+	% I use comments here to keep track of exactly what I did for each service obligation.
+	% That includes more detailed tallies of which papers I've reviewed for each 
+	% journal when (which is why the examples I've put here, on this public
+	% template, are entirely fictional).
 \begin{datetabbing}	
 \>  Editorial Positions																\\[\wrapgap]
 \>	\>	Area Editor, \textit{Nonprofit and Voluntary Sector Quarterly}
@@ -380,6 +356,10 @@ Economic History Association (poster session)					& 2011
 \>	\>	Program Committee, National Tax Association Conference 		\> 2016		\'	\\[\dategap]
 \>	Referee																			\\[\wrapgap]
 \>	\>	\textit{American Economic Journal}											\\[\wrapgap]
+	% 1. That paper about snails -- first round Oct 2019
+	%				-- Second round May 2020
+	%				-- Third round Sep 2020
+	% 2. That paper about slugs -- first round Jan 2020
 \>	\>	\textit{Quarterly Journal of Political Economy}								\\[\wrapgap]
 \>	\>	\textit{Nonprofit and Voluntary Sector Quarterly}							\\[\dategap]
 \>	Advising																		\\[\wrapgap]
@@ -417,6 +397,9 @@ Economic History Association (poster session)					& 2011
 				% ------------------------------------------------------ %
 				% --------------------  LAST UPDATED ------------------- %
 				% ------------------------------------------------------ %
+	% Note:
+	% This puts the current date in small text at the bottom
+	% of the last page.
 \vfill{}
 \begin{scriptsize}
 \textit{Last updated: \today{} }
